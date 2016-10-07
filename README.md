@@ -19,4 +19,4 @@
 * 류지환/ jeewhan/ https://github.com/Eclatant
 * 송헌용/ sejongin/ https://github.com/apple77y
 * 박정춘/ unlimitedfocus/ https://github.com/unlimitedfocus
-* 조대/ cho/ https://github.com/cdsleaf
+* 조대상/ cho/ https://github.com/cdsleaf
