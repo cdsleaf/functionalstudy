@@ -15,7 +15,7 @@
 10. 이두한/ duhan/ https://github.com/leeduhan
 11. 이영범/ yb/ https://github.com/youngbeomrhee
 12. 김정환 / jeonghwan / https://github.com/jeonghwan-kim/
-13. 김광민/ kyle/ https://github.com/ambrosiak
+13. 김광민/ ambrosia/ https://github.com/ambrosiak
 14. 류지환/ jeewhan/ https://github.com/Eclatant
 15. 송헌용/ sejongin/ https://github.com/apple77y
 16. 박정춘/ unlimitedfocus/ https://github.com/unlimitedfocus
