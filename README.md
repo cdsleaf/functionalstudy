@@ -24,5 +24,5 @@
 19. 김민정/ minjeongkim/ https://github.com/mj111
 20. 김태완/ taewanme/ https://github.com/taewanme
 21. 오명운/ hanmomhanda/ https://github.com/hanmomhanda
-22. 오재용/ matobsecure/ https://github.com/matobsecure 
+22. 오재용/ obsecure/ https://github.com/matobsecure 
 
