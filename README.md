@@ -2,6 +2,25 @@
 함수형 프로그래밍 스터디 그룹입니다.
 
 
+### 연습용 환경세팅
+
+설치
+
+```shell
+$ [sudo] npm i -g webpack
+$ npm i
+```
+
+실행
+
+```shell
+$ npm start
+```
+
+URL : http://localhost:8080/
+
+
+
 ### 참가를 원하시는 분은 아래에 성명/슬랙아이디/깃헙주소를 넣어주세요.
 1. 맹기완/ hika00/ https://github.com/hikaMaeng
 2. 박수석/ david/ https://github.com/chiyodad
@@ -24,5 +43,4 @@
 19. 김민정/ minjeongkim/ https://github.com/mj111
 20. 김태완/ taewanme/ https://github.com/taewanme
 21. 오명운/ hanmomhanda/ https://github.com/hanmomhanda
-22. 오재용/ obsecure/ https://github.com/matobsecure 
-
+22. 오재용/ obsecure/ https://github.com/matobsecure
