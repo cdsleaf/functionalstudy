@@ -1,3 +1,4 @@
+
 [1,2,3,4].reduce(
   _.compose(
     partial(sqrPost, _.identity) , partial(
@@ -28,18 +29,19 @@ function condition1(/* validators */) {
 function condition2(/* validators */) {
     var validators = _.toArray(arguments);
 
-    return function(fun, pre, next) {
+    return function(fun /*,arguments */) {
         var err = [];
-        var arg = [pre, next];
+        var args = _.first(_.rest(arguments), fun.length);
+
         validators.forEach((v, idx)=> {
-          if(!v(arg[idx])) err.push(v.message);
+          if(!v(args[idx])) err.push(v.message);
         });
 
         if (err.length){
           throw new Error(err.join(", "));
         }
 
-        return fun(pre, next);
+        return fun.apply(fun, args);
     };
 }
 
