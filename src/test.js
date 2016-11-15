@@ -61,38 +61,18 @@ var sqrPost = condition1(
     validator("number", Number.isInteger)
   ), function(p,v){return p + v;}))
 );
+
 /*
-2. descendant = function(el, tagName){
+descendant = function(el, tagName){
 descendant(a, 'div')
 a = document.getElementsByTagName('a')[0]
 
 el 의 자식 중 tagname 이 같은 것을 찾아야함.
 el.children
+
+el 은 dom object로 넘어올 것. tagName 은 string.
+배열을 순차적으로 찾으면서 result에 넣어야....
 */
-
-//el 은 dom object로 넘어올 것. tagName 은 string.
-//배열을 순차적으로 찾으면서 result에 넣어야....
-
-function descendant(el, tagName){
-
-  var elements = el.getElementsByTagName(tagName);
-
-  var descendantEl = function(arrayEl, tagName, result){
-
-    if(_.isEmpty(arrayEl)) return result;
-
-    var node = _.first(arrayEl);
-    var more = _.rest(arrayEl);
-
-    return descendantEl(more, tagName, construct(node, result));
-  }
-
-  return descendantEl(elements, tagName, []);
-}
-
-descendant(document.getElementsByTagName('html')[0], 'h1');
-
-//////////////////////////////
 
 function descendant(el, tagName){
 //debugger;
@@ -116,3 +96,30 @@ function descendant(el, tagName){
 
 var inputEl = document.getElementsByTagName('html')[0];
 descendant(inputEl, 'h1');
+//// 정답은  아래
+
+d = (el, tagName, r = [])=>Array.prototype.slice(el.children, 0).reduce((r, el)=>{
+	if(el.tagName == tagName) result.push(el);
+	if(el.children.length) d(el, tagName, r);
+	return r;
+}, r);
+
+function for(start, end, body){
+  if(start == end) return;
+  body(start);
+  for(start + 1, end, body);
+}
+
+/*
+16.11.14
+
+과제
+
+postDepth(......,influences)
+대신
+visit(............,influences)
+이렇게 해도 동일한 결과를 얻도록
+
+심화과제 pre는 왜 visit만으로 안되냐
+
+*/
