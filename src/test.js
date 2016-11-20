@@ -139,7 +139,7 @@ function postDepth(fun, ary) {
 
 function visit1(resultFun, ary){
   if (_.isArray(ary))
-      return resultFun(_.map(ary, partial1(visit1, fun)));
+      return resultFun(_.map(ary, partial1(visit1, resultFun)));
   else
       return resultFun(ary);
 }
