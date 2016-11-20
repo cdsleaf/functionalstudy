@@ -123,3 +123,27 @@ visit(............,influences)
 심화과제 pre는 왜 visit만으로 안되냐
 
 */
+
+function visit(mapFun, resultFun, ary) {
+    if (_.isArray(ary))
+        return resultFun(_.map(ary, mapFun));
+    else
+        return resultFun(ary);
+}
+
+function postDepth(fun, ary) {
+    return visit(partial1(postDepth, fun), fun, ary);
+}
+
+//postDepth(fun, nextArg)
+
+function visit1(resultFun, ary){
+  if (_.isArray(ary))
+      return resultFun(_.map(ary, partial1(visit1, fun)));
+  else
+      return resultFun(ary);
+}
+
+function preDepth(fun, ary) {
+    return visit(partial1(preDepth, fun), fun, fun(ary));
+}
