@@ -137,12 +137,23 @@ function postDepth(fun, ary) {
 
 //postDepth(fun, nextArg)
 
-function visit1(resultFun, ary){
+var influences = [
+  ['Lisp', 'Smalltalk'],
+  ['Lisp', 'Scheme'],
+  ['Smalltalk', 'Self'],
+  ['Scheme', 'JavaScript'],
+  ['Self', 'Lua'],
+  ['Self', 'JavaScript']
+]
+
+function postDepth_visit(resultFun, ary){
   if (_.isArray(ary))
       return resultFun(_.map(ary, partial1(visit1, resultFun)));
   else
       return resultFun(ary);
 }
+
+visit(partial(visit, resultFun), resultFun, ary);
 
 function preDepth(fun, ary) {
     return visit(partial1(preDepth, fun), fun, fun(ary));
