@@ -705,8 +705,8 @@ function partial(fun /*, pargs */) {
 }
 
 function sqr(n) {
-    if (!number(n)) throw new Error(number.message);
-    if (zero(n))    throw new Error(zero.message);
+    if (!_.isNumber(n)) throw new Error(number.message);
+    //if (_.zero(n))    throw new Error(zero.message);
 
     return n * n;
 }
