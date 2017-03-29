@@ -701,8 +701,8 @@ function partial(fun /*, pargs */) {
 }
 
 function sqr(n) {
-    if (!number(n)) throw new Error(number.message);
-    if (zero(n))    throw new Error(zero.message);
+    if (!_.isNumber(n)) throw new Error(number.message);
+    //if (_.zero(n))    throw new Error(zero.message);
 
     return n * n;
 }
@@ -1588,3 +1588,5 @@ var compareAndSwap = invoker('swap', CAS.prototype.swap);
 
 function snapshot(o) { return o.snapshot() }
 function addWatcher(o, fun) { o.watch(fun) }
+
+
