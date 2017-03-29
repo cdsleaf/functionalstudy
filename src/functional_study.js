@@ -93,3 +93,12 @@ function curry3(fun) {
         };
     };
 };
+
+//p.137 
+//curry3(fun)(last)(middle)(first);
+//플루언트 함수형 API  fluent functional APIs.
+//플루언트 API => 플루언트 인터페이스 : 메소드 체이닝을 지원하는 디자인 페턴, 가독성 높은 객체지향 API 구현 가능.
+//메소드 체이닝 : 여러 메소드를 이어서 호출하는 문법, 메소드가 객체(주로 this)를 반환함으로써 가능하게 됨
+
+//https://www.martinfowler.com/bliki/FluentInterface.html
+//https://modernweb.com/fluent-apis-and-method-chaining/
