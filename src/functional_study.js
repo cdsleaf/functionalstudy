@@ -6,6 +6,20 @@
 
 //invoker 생성시에 넣어둔 메서드가 실행할때 넘어오는 target의 요소인 경우에만 실행되는 함수를 반환
 
+function invoker (NAME, METHOD) {
+    return function(target /* args ... */) {
+        if (!existy(target)) fail("Must provide a target");
+
+        var targetMethod = target[NAME];
+        var args = _.rest(arguments);
+
+        // targetMethod가 처음에 생성될때 넘겨준 함수와 동일한 경우에만 실행
+        return doWhen((existy(targetMethod) && METHOD === targetMethod), function() {
+            return targetMethod.apply(target, args);
+        });
+    };
+}
+
 //dispatch는 인자로 받는 여러 함수들의 조합으로 새로운 다형적 함수를 만들 수 있다.
 function dispatch(/* funs */) {
     var funs = _.toArray(arguments);
